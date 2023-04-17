@@ -358,22 +358,47 @@ void remove_elem(sensor **s_vector, int index, int s_number)
 	s_vector[index] = NULL;
 }
 
-void clear(sensor **s_vector, int s_number)
+int clear(sensor **s_vector, int s_number)
 {
 	for (int i = 0; i < s_number; i++) {
-		if (s_vector[i]->sensor_type == 0) {
-			if (check_0(s_vector, i)) {
-				remove_elem(s_vector, i, s_number);
-				s_number--;
-			}
-		} else if (s_vector[i]->sensor_type == 1) {
+		if (s_vector[i]->sensor_type == 1) {
 			if (check_1(s_vector, i)) {
+				// printf("test 1\n");
 				remove_elem(s_vector, i, s_number);
 				s_number--;
+				i--;
 			}
 		}
 	}
+	for (int i = 0; i < s_number; i++) {
+		if (s_vector[i]->sensor_type == 0) {
+			if (check_0(s_vector, i)) {
+				// printf("test 1\n");
+				remove_elem(s_vector, i, s_number);
+				s_number--;
+				i--;
+			}
+		}
+	}
+	return s_number;
 }
+
+// void clear(sensor **s_vector, int s_number)
+// {
+// 	for (int i = 0; i < s_number; i++) {
+// 		if (s_vector[i]->sensor_type == 0) {
+// 			if (check_0(s_vector, i)) {
+// 				remove_elem(s_vector, i, s_number);
+// 				s_number--;
+// 			}
+// 		} else if (s_vector[i]->sensor_type == 1) {
+// 			if (check_1(s_vector, i)) {
+// 				remove_elem(s_vector, i, s_number);
+// 				s_number--;
+// 			}
+// 		}
+// 	}
+// }
 
 void exit_prog(sensor **s_vector, int s_number)
 {

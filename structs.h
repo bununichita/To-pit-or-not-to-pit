@@ -40,7 +40,7 @@ void read_0(sensor **s_vector, int i, FILE *data);
 void read_1(sensor **s_vector, int i, FILE *data);
 void print(sensor **s_vector, int index, int s_number);
 void analyze(sensor **s_vector, int n, int s_number);
-void clear(sensor **s_vector, int s_number);
+int clear(sensor **s_vector, int s_number);
 void exit_prog(sensor **s_vector, int s_number);
 
 #endif // _STRUCTS_H_

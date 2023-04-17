@@ -38,11 +38,13 @@ int main(int argc, char const *argv[])
 			analyze(s_vector, index, s_number);
 		}
 		if (strncmp(command, "clear", 5) == 0) {
-			clear(s_vector, s_number);
+			s_number = clear(s_vector, s_number);
 		}
 		if (strncmp(command, "exit", 4) == 0) {
+			// printf("%d\n", s_number);
 			exit_prog(s_vector, s_number);
 			free(s_vector);
+			fclose(data);
 			return 0;
 		}
 	}
