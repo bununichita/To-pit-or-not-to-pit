@@ -1,0 +1,37 @@
+# Copyright 2023 Nichita-Adrian Bunu <bununichita@gmail.com>
+
+Modul de functionare al programului:
+
+Se aloca un vector de structuri tip "sensor" prin intermediul functiei
+"s_vector_alloc".
+
+Se citesc datele senzorilor in functie de tipul fiecaruia:
+-"tire_sensor"
+-"power_management_unit"
+
+
+In functie de comanda citita de la tastatura, avem:
+
+1. print
+
+Se afiseaza datele senzorilor in functie de tipul fiecaruia.
+
+Pentru testele de tip "hard" se apeleaza functia "get_s_index".
+
+2. clear
+
+Se parcurg toti senzorii in ordinea normala si de fiecare data cand
+functiile de tip "check_[12]" returneaza 1 se sterge elementul respectiv si se
+realoca vectorul de structuri.
+
+3. analyze
+
+Se efectueaza operatiile din fisierul "operations.c" cu ajutorul vectorului
+de functii "operations_idxs".
+
+Pentru testele de tip "hard" se apeleaza functia "get_s_index".
+
+4. exit
+
+Se dealoca toata memoria alocata de program si se finalizeaza iesirea din
+acesta.

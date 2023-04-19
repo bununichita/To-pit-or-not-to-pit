@@ -1,9 +1,6 @@
+// # Copyright 2023 Nichita-Adrian Bunu <bununichita@gmail.com>
 #ifndef _STRUCTS_H_
 #define _STRUCTS_H_
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 enum sensor_type {
 	TIRE,
@@ -34,13 +31,6 @@ typedef struct __attribute__((__packed__))
 	int performace_score;
 } tire_sensor;
 
-sensor **s_vector_alloc(int size);
-int parse(char s[50]);
-void read_0(sensor **s_vector, int i, FILE *data);
-void read_1(sensor **s_vector, int i, FILE *data);
-void print(sensor **s_vector, int index, int s_number);
-void analyze(sensor **s_vector, int n, int s_number);
-int clear(sensor **s_vector, int s_number);
-void exit_prog(sensor **s_vector, int s_number);
+void get_operations(void **operations);
 
 #endif // _STRUCTS_H_
